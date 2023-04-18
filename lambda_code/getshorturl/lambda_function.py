@@ -17,7 +17,7 @@ def lambda_handler(event, context):
         
         query_response = dynamodb.get_item(
                 Key={
-                    'url': {"S": "https://longurl.com/asd"},
+                    'url': url,
                 },
                 TableName=table
             )
