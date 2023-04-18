@@ -1,5 +1,5 @@
 
-# Welcome to your CDK Python project!
+# Welcome to CDK Python project!
 
 ## URL Shortener CDK APP 
 
