@@ -24,4 +24,4 @@
 
 **Getshorturl**
 
-  JSON Body : `{"url":"https://longurl.com/asd"}`
+  JSON Body : `{"S": "https://longurl.com/asd"}`
