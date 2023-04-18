@@ -1,0 +1,47 @@
+---
+openapi: "3.0.3"
+info:
+  title: Shortener URL - OpenAPI 3.0
+  description: "URL Shortener API"
+  version: 1.0
+servers:
+  - url: https://localhost  
+tags:
+  - name: Shortener URL API
+    description: Shortener URL - OpenAPI 3.0
+paths:
+  "/getshorturl":
+      post:
+        responses:
+          "200":
+            description: successful operation
+            content:
+              application/json:
+          "400":
+            description: Invalid request
+          "500":
+          description: Internal server error
+        x-amazon-apigateway-integration:
+          credentials: "${ApiGatewayLambdaRole.Arn}"
+          type: aws_proxy
+          httpMethod: POST
+          uri: arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${APILambda.Arn}/invocations
+  "/admin":
+    post:
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+        "400":
+          description: Invalid request
+        "500":
+          description: Internal server error
+      x-amazon-apigateway-integration:
+        credentials: "${ApiGatewayLambdaRole.Arn}"
+        type: aws_proxy
+        httpMethod: POST
+        uri: arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${APILambda.Arn}/invocations
+
+
+  
