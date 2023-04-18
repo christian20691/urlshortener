@@ -3,7 +3,7 @@
 
 ## URL Shortener CDK APP 
 
-### Single Stack Application 
+### Single stack application resources
 
 **Lambdas:**.   
 > - getshorturl. 
@@ -16,3 +16,12 @@
 > - /admin POST resource
 > - /getshorturl POST resource 
 
+### APIGW Test
+
+**Admin**
+
+  JSON Body : `{"url":"https://longurl.com/asd","shorturl":"https://lng.com"}`
+
+**Getshorturl**
+
+  JSON Body : `{"url":"https://longurl.com/asd"}`
